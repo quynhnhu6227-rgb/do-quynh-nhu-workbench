@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f7f1">
+  <title>Newsroom — Agent phiên âm âm thanh & video của Đỗ Quỳnh Như</title>
+  <style>
+    :root {
+      --page: #f6f7f1;
+      --surface: #ffffff;
+      --ink: #17251f;
+      --muted: #718078;
+      --line: #e6ebe5;
+      --green: #1e684b;
+      --green-dark: #174e3a;
+      --green-soft: #e8f3ec;
+      --blue: #5575a0;
+      --blue-soft: #edf2f9;
+      --gold: #a47527;
+      --gold-soft: #fbf3df;
+      --red: #985e54;
+      --red-soft: #faeeeb;
+      --shadow: 0 14px 36px rgba(28, 48, 38, .07);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--page); color: var(--ink); font: 15px/1.55 Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; }
+    button, a { font: inherit; }
+    button { color: inherit; }
+    a { color: inherit; text-decoration: none; }
+    .shell { min-height: 100vh; display: grid; grid-template-columns: 252px minmax(0, 1fr); }
+    .sidebar { border-right: 1px solid var(--line); background: rgba(255,255,255,.7); padding: 26px 18px; display: flex; flex-direction: column; gap: 28px; }
+    .brand { display: flex; align-items: center; gap: 11px; padding: 0 8px; }
+    .brand-mark { width: 36px; height: 36px; border-radius: 12px; background: var(--green); color: white; display: grid; place-items: center; font-weight: 700; letter-spacing: -.05em; }
+    .brand-name { font-size: 14px; font-weight: 700; letter-spacing: .08em; }
+    .brand-sub { color: var(--muted); font-size: 11px; margin-top: 1px; }
+    .nav-label { padding: 0 10px; margin-bottom: 8px; color: #9aa59e; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; }
+    .nav-list { display: grid; gap: 5px; }
+    .nav-link { display: flex; align-items: center; gap: 11px; padding: 10px 11px; border-radius: 12px; color: #5e6b64; font-size: 13px; transition: background .18s ease, color .18s ease; }
+    .nav-link:hover, .nav-link:focus-visible { background: #eff4ef; color: var(--green-dark); outline: none; }
+    .nav-link.active { color: var(--green-dark); background: var(--green-soft); font-weight: 650; }
+    .nav-icon { width: 20px; height: 20px; border: 1px solid currentColor; border-radius: 7px; display: grid; place-items: center; font-size: 10px; opacity: .85; }
+    .side-note { margin-top: auto; padding: 15px; border-radius: 16px; background: #f0f4ee; color: #5a6b60; font-size: 12px; }
+    .side-note strong { display: block; color: #314a3a; margin-bottom: 5px; font-size: 12px; }
+    .side-note .tiny-label { display: inline-flex; gap: 6px; align-items: center; margin-top: 9px; color: var(--gold); font-size: 10px; font-weight: 700; }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: #d29b35; display: inline-block; }
+    main { min-width: 0; padding: 22px clamp(18px, 4vw, 56px) 64px; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 28px; }
+    .crumb { color: var(--muted); font-size: 12px; }
+    .crumb b { color: var(--ink); font-weight: 600; }
+    .top-actions { display: flex; align-items: center; gap: 9px; }
+    .small-pill { display: inline-flex; align-items: center; gap: 7px; border: 1px solid #e5e9e3; border-radius: 999px; padding: 7px 11px; background: rgba(255,255,255,.72); font-size: 11px; color: #66746b; }
+    .small-pill .dot { background: #d59a2d; }
+    .profile-chip { display: inline-flex; align-items: center; gap: 8px; padding: 5px 10px 5px 5px; border: 1px solid var(--line); background: white; border-radius: 999px; font-size: 11px; color: #536158; }
+    .avatar { display: grid; place-items: center; width: 26px; height: 26px; color: white; background: #557d67; border-radius: 50%; font-size: 10px; font-weight: 700; }
+    .hero { position: relative; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(220px, .7fr); gap: 24px; padding: clamp(25px, 4vw, 42px); border-radius: 26px; color: white; background: linear-gradient(115deg, #1a5740, #2f7655 62%, #4e8063); box-shadow: var(--shadow); }
+    .hero:after { content: ""; position: absolute; width: 320px; height: 320px; border-radius: 50%; border: 1px solid rgba(255,255,255,.13); right: -88px; top: -160px; box-shadow: 0 0 0 32px rgba(255,255,255,.035), 0 0 0 72px rgba(255,255,255,.025); pointer-events: none; }
+    .eyebrow { display: flex; align-items: center; gap: 8px; color: #d2e7d8; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; }
+    .hero h1 { max-width: 720px; font-size: clamp(30px, 4vw, 49px); line-height: 1.08; letter-spacing: -.045em; margin: 14px 0 12px; font-weight: 650; }
+    .hero p { max-width: 620px; margin: 0; color: #d7e6dc; font-size: 14px; }
+    .hero-credit { display: block; margin-top: 12px; color: #b9cec0; font-size: 12px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .btn { display: inline-flex; justify-content: center; align-items: center; gap: 9px; min-height: 42px; padding: 10px 16px; border: 1px solid transparent; border-radius: 12px; cursor: pointer; font-size: 12px; font-weight: 650; transition: transform .16s ease, background .16s ease; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-light { color: var(--green-dark); background: white; }
+    .btn-light:hover { background: #eff6f0; }
+    .btn-quiet { color: white; background: transparent; border-color: rgba(255,255,255,.35); }
+    .btn-quiet:hover { background: rgba(255,255,255,.1); }
+    .hero-aside { align-self: end; justify-self: end; width: min(100%, 270px); padding: 17px; border: 1px solid rgba(255,255,255,.18); border-radius: 18px; background: rgba(255,255,255,.10); backdrop-filter: blur(4px); }
+    .hero-aside small { color: #c5dfce; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; }
+    .hero-aside strong { display: block; font-size: 18px; margin: 6px 0 4px; }
+    .hero-aside p { color: #d5e5da; font-size: 11px; }
+    .sim-banner { display: flex; align-items: flex-start; gap: 12px; margin: 18px 0 25px; padding: 14px 16px; background: var(--gold-soft); border: 1px solid #f0e3c2; border-radius: 15px; color: #75591e; }
+    .sim-icon { width: 25px; height: 25px; border-radius: 8px; flex: 0 0 25px; display: grid; place-items: center; background: #f2e4c3; font-size: 12px; font-weight: 700; }
+    .sim-banner strong { display: block; font-size: 12px; margin-bottom: 2px; }
+    .sim-banner span { display: block; font-size: 11px; color: #8b7544; }
+    .section { scroll-margin-top: 22px; margin-top: 34px; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 15px; margin-bottom: 14px; }
+    .section-kicker { color: #7e9284; text-transform: uppercase; font-size: 10px; letter-spacing: .13em; font-weight: 700; }
+    h2 { margin: 4px 0 0; font-size: 21px; letter-spacing: -.03em; line-height: 1.25; }
+    .section-desc { color: var(--muted); font-size: 12px; margin: 5px 0 0; }
+    .metric-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .metric { background: var(--surface); border: 1px solid var(--line); border-radius: 17px; padding: 16px; box-shadow: 0 5px 18px rgba(29,49,38,.025); }
+    .metric-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; color: var(--muted); font-size: 11px; }
+    .metric-icon { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 9px; color: var(--green); background: var(--green-soft); font-size: 12px; }
+    .metric strong { display: block; font-size: 19px; margin-top: 12px; letter-spacing: -.03em; }
+    .metric p { margin: 2px 0 0; color: var(--muted); font-size: 10px; }
+    .content-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(290px, .85fr); gap: 16px; align-items: start; }
+    .surface { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 5px 18px rgba(29,49,38,.025); }
+    .demo { padding: 20px; }
+    .demo-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+    .demo-head h3, .panel h3 { margin: 0; font-size: 15px; letter-spacing: -.02em; }
+    .demo-head p { margin: 4px 0 0; color: var(--muted); font-size: 11px; }
+    .demo-tag { flex: 0 0 auto; border-radius: 999px; padding: 6px 9px; background: var(--blue-soft); color: var(--blue); font-size: 9px; font-weight: 700; letter-spacing: .05em; }
+    .sample-source { margin-top: 18px; border: 1px dashed #ccd9cf; background: #f8faf7; border-radius: 15px; padding: 14px; display: flex; justify-content: space-between; align-items: center; gap: 15px; }
+    .source-main { min-width: 0; display: flex; align-items: center; gap: 11px; }
+    .file-icon { display: grid; place-items: center; flex: 0 0 38px; height: 38px; background: #e9f2eb; color: var(--green); border-radius: 11px; font-size: 12px; font-weight: 700; }
+    .source-title { font-size: 11px; font-weight: 650; }
+    .source-meta { color: var(--muted); font-size: 10px; margin-top: 3px; }
+    .source-chip { color: #708178; font-size: 9px; white-space: nowrap; }
+    .demo-controls { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 13px; }
+    .demo-note { color: var(--muted); font-size: 10px; }
+    .btn-run { color: white; background: var(--green); min-height: 38px; padding: 9px 14px; }
+    .btn-run:hover { background: var(--green-dark); }
+    .btn-run:disabled { opacity: .6; cursor: wait; transform: none; }
+    .progress-wrap { margin-top: 18px; }
+    .progress-top { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 8px; color: var(--muted); font-size: 10px; }
+    .progress-track { height: 6px; overflow: hidden; border-radius: 999px; background: #edf1ed; }
+    .progress-fill { width: 0; height: 100%; border-radius: inherit; background: #4f9a6c; transition: width .45s ease; }
+    .stage-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 7px; margin-top: 11px; }
+    .stage { padding: 8px 7px; text-align: center; border-radius: 10px; background: #f7f9f6; color: #9aa59e; font-size: 9px; border: 1px solid transparent; }
+    .stage.done { color: #427755; background: var(--green-soft); }
+    .stage.current { color: #805f1b; background: var(--gold-soft); border-color: #eee0bb; }
+    .demo-result { display: none; margin-top: 17px; border-top: 1px solid var(--line); padding-top: 16px; }
+    .demo-result.show { display: block; animation: appear .35s ease both; }
+    @keyframes appear { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: none; } }
+    .result-label { color: var(--green); font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .11em; }
+    .result-title { margin: 5px 0 8px; font-size: 13px; font-weight: 700; }
+    .result-copy { color: #59675f; font-size: 11px; margin: 0; }
+    .result-points { margin: 10px 0 0; padding-left: 17px; color: #59675f; font-size: 11px; }
+    .result-points li + li { margin-top: 5px; }
+    .panel { padding: 19px; }
+    .quality-list { display: grid; gap: 12px; margin-top: 14px; }
+    .quality { display: grid; grid-template-columns: 27px 1fr; gap: 10px; align-items: start; }
+    .quality-check { width: 25px; height: 25px; display: grid; place-items: center; border-radius: 9px; color: var(--green); background: var(--green-soft); font-size: 11px; font-weight: 700; }
+    .quality strong { display: block; font-size: 11px; }
+    .quality span { display: block; margin-top: 2px; color: var(--muted); font-size: 10px; }
+    .steps-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+    .step { position: relative; min-height: 122px; padding: 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; }
+    .step-num { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 9px; color: var(--green); background: var(--green-soft); font-size: 10px; font-weight: 750; }
+    .step strong { display: block; margin-top: 11px; font-size: 11px; }
+    .step p { margin: 4px 0 0; color: var(--muted); font-size: 10px; }
+    .boundary-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .boundary { display: flex; gap: 11px; padding: 15px; border-radius: 16px; border: 1px solid var(--line); background: white; }
+    .boundary-icon { flex: 0 0 28px; display: grid; place-items: center; height: 28px; border-radius: 9px; font-size: 11px; font-weight: 700; }
+    .boundary.ok .boundary-icon { color: var(--green); background: var(--green-soft); }
+    .boundary.no .boundary-icon { color: var(--red); background: var(--red-soft); }
+    .boundary strong { display: block; font-size: 11px; }
+    .boundary p { margin: 3px 0 0; color: var(--muted); font-size: 10px; }
+    .footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; padding-top: 22px; margin-top: 36px; border-top: 1px solid var(--line); color: #8b978f; font-size: 10px; }
+    .footer b { color: #69786e; }
+    @media (max-width: 1000px) { .shell { grid-template-columns: 210px minmax(0,1fr); } .content-grid { grid-template-columns: 1fr; } .hero { grid-template-columns: 1fr; } .hero-aside { justify-self: start; } }
+    @media (max-width: 700px) { .shell { display: block; } .sidebar { position: static; padding: 13px 15px; border-right: 0; border-bottom: 1px solid var(--line); gap: 12px; } .brand { padding: 0; } .sidebar .nav-label, .side-note { display: none; } .nav-list { display: flex; overflow-x: auto; padding-bottom: 2px; } .nav-link { flex: 0 0 auto; padding: 8px 10px; font-size: 11px; } .nav-icon { display: none; } main { padding: 17px 15px 42px; } .topbar { margin-bottom: 17px; } .profile-chip { display: none; } .hero { padding: 23px 20px; border-radius: 21px; } .hero h1 { font-size: 34px; } .hero-aside { width: 100%; } .metric-grid { grid-template-columns: 1fr; } .metric { display: flex; align-items: center; justify-content: space-between; gap: 12px; } .metric strong { margin: 0; font-size: 15px; } .metric p { max-width: 150px; text-align: right; } .metric-top { display: contents; } .metric-icon { order: -1; } .steps-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } .boundary-grid { grid-template-columns: 1fr; } .section-head { align-items: flex-start; flex-direction: column; } .sample-source { align-items: flex-start; } .source-chip { white-space: normal; text-align: right; } .stage-list { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+    @media (max-width: 380px) { .top-actions .small-pill { font-size: 9px; padding: 6px 8px; } .demo-controls { align-items: flex-start; flex-direction: column; } .btn-run { width: 100%; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" aria-label="Điều hướng chính">
+      <a class="brand" href="#home" aria-label="Newsroom Agent, về đầu trang">
+        <span class="brand-mark">N</span>
+        <span><span class="brand-name">NEWSROOM</span><span class="brand-sub">Không gian Agent</span></span>
+      </a>
+      <div>
+        <div class="nav-label">Khám phá Agent</div>
+        <nav class="nav-list">
+          <a class="nav-link active" href="#home"><span class="nav-icon">⌂</span><span>Tổng quan 总览</span></a>
+          <a class="nav-link" href="#demo"><span class="nav-icon">▷</span><span>Demo mô phỏng 演示</span></a>
+          <a class="nav-link" href="#workflow"><span class="nav-icon">↗</span><span>Quy trình 流程</span></a>
+          <a class="nav-link" href="#standards"><span class="nav-icon">✓</span><span>Quy chuẩn 标准</span></a>
+          <a class="nav-link" href="#boundaries"><span class="nav-icon">◇</span><span>Ranh giới 边界</span></a>
+        </nav>
+      </div>
+      <div class="side-note">
+        <strong>Chỉ là bản trưng bày</strong>
+        Trang này không gửi dữ liệu và không gọi Hermes.
+        <span class="tiny-label"><i class="dot"></i> MÔ PHỎNG TĨNH</span>
+      </div>
+    </aside>
+
+    <main>
+      <div class="topbar">
+        <div class="crumb">Agent / <b>Biên tập viên tin tức</b></div>
+        <div class="top-actions">
+          <span class="small-pill"><i class="dot"></i> Mô phỏng — không xử lý tệp thật</span>
+          <span class="profile-chip"><span class="avatar">N</span> newseditor</span>
+        </div>
+      </div>
+
+      <section class="hero" id="home">
+        <div>
+          <div class="eyebrow"><span>✳</span> Âm thanh & video · Audio & video</div>
+          <h1>Từ lời nói đến bản tin có căn cứ.</h1>
+          <p>Agent phiên âm, lọc nhiễu và chắt lọc những ý nổi bật từ âm thanh, video hoặc liên kết — rồi trình bày thành bản tóm tắt dễ kiểm tra.</p>
+          <small class="hero-credit">Agent của Đỗ Quỳnh Như</small>
+          <div class="hero-actions">
+            <a class="btn btn-light" href="#demo">Xem demo mô phỏng <span aria-hidden="true">↘</span></a>
+            <a class="btn btn-quiet" href="#workflow">Khám phá quy trình</a>
+          </div>
+        </div>
+        <div class="hero-aside">
+          <small>Vai trò / Agent role</small>
+          <strong>Biên tập viên tin tức</strong>
+          <p>Biến nguồn âm thanh/video thành transcript và bản tin gọn, trung thực với nguồn.</p>
+        </div>
+      </section>
+
+      <div class="sim-banner" role="note">
+        <div class="sim-icon" aria-hidden="true">i</div>
+        <div><strong>Mô phỏng — không xử lý tệp thật</strong><span>Nút demo chỉ phát nội dung dựng sẵn trong trình duyệt. Không có tải tệp, backend, API, khóa truy cập hay kết nối đến Profile Hermes.</span></div>
+      </div>
+
+      <section class="section" aria-labelledby="overview-title">
+        <div class="section-head">
+          <div><div class="section-kicker">Tổng quan / Overview</div><h2 id="overview-title">Một luồng làm việc, ba điều cốt lõi</h2><p class="section-desc">Đầu vào rõ ràng, nội dung bám nguồn, người dùng duyệt trước khi gửi.</p></div>
+        </div>
+        <div class="metric-grid">
+          <article class="metric"><div class="metric-top"><span>Nguồn thường dùng</span><span class="metric-icon" aria-hidden="true">♫</span></div><strong>Audio · Video · URL</strong><p>YouTube, Drive hoặc tệp tải lên</p></article>
+          <article class="metric"><div class="metric-top"><span>Phiên tiêu chuẩn</span><span class="metric-icon" aria-hidden="true">◷</span></div><strong>1–3 nguồn</strong><p>Thường 15–45 phút mỗi nguồn</p></article>
+          <article class="metric"><div class="metric-top"><span>Nguyên tắc đầu ra</span><span class="metric-icon" aria-hidden="true">✓</span></div><strong>4 tiêu chí</strong><p>Trung thực · Đủ ý · Rõ · Không đoán</p></article>
+        </div>
+      </section>
+
+      <section class="section" id="demo" aria-labelledby="demo-title">
+        <div class="section-head">
+          <div><div class="section-kicker">Trải nghiệm / Experience</div><h2 id="demo-title">Xem một lượt xử lý mô phỏng</h2><p class="section-desc">Mẫu dựng sẵn minh họa giao diện và các bước, không đại diện cho kết quả chạy thực tế.</p></div>
+        </div>
+        <div class="content-grid">
+          <article class="surface demo">
+            <div class="demo-head"><div><h3>Phiên demo · Tư liệu dựng sẵn</h3><p>Không chọn hoặc tải tệp từ thiết bị.</p></div><span class="demo-tag">SIMULATION</span></div>
+            <div class="sample-source">
+              <div class="source-main"><div class="file-icon" aria-hidden="true">TXT</div><div><div class="source-title">Mẫu hội thoại về phương pháp học tập</div><div class="source-meta">Nội dung hư cấu · 18 phút mô phỏng · Không có nguồn thật</div></div></div>
+              <span class="source-chip">Ví dụ dựng sẵn</span>
+            </div>
+            <div class="demo-controls"><span class="demo-note">Bấm nút để xem tiến trình giả lập.</span><button class="btn btn-run" id="run-demo" type="button">▷ <span>Phát bản demo</span></button></div>
+            <div class="progress-wrap" aria-live="polite">
+              <div class="progress-top"><span id="demo-status">Sẵn sàng trình diễn</span><span id="demo-percent">0%</span></div>
+              <div class="progress-track" role="progressbar" aria-label="Tiến trình demo mô phỏng" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill" id="progress-fill"></div></div>
+              <div class="stage-list">
+                <div class="stage" data-stage="0">Xác thực nguồn</div><div class="stage" data-stage="1">Tạo transcript</div><div class="stage" data-stage="2">Lọc & chọn ý</div><div class="stage" data-stage="3">Kiểm tra đầu ra</div>
+              </div>
+            </div>
+            <div class="demo-result" id="demo-result" aria-live="polite">
+              <div class="result-label">Kết quả mẫu · Không phải kết quả chạy thật</div>
+              <div class="result-title">Tóm tắt mô phỏng: học tập theo phiên ngắn</div>
+              <p class="result-copy">Đoạn hội thoại dựng sẵn đề xuất chia thời gian học thành phiên tập trung ngắn, xen kẽ nghỉ và ôn lại nội dung vừa học.</p>
+              <ul class="result-points"><li>Ý chính: lập mục tiêu nhỏ trước mỗi phiên học.</li><li>Điểm cần kiểm tra ở nguồn thật: số liệu/thời lượng cụ thể nếu có.</li><li>Đoạn không rõ: không có trong mẫu dựng sẵn.</li></ul>
+            </div>
+          </article>
+          <aside class="surface panel" id="standards">
+            <h3>Tiêu chuẩn bản tin</h3>
+            <p class="section-desc">Mỗi kết quả cần đáp ứng đủ các tiêu chí này.</p>
+            <div class="quality-list">
+              <div class="quality"><span class="quality-check">✓</span><div><strong>Trung thực với nguồn</strong><span>Không bịa số liệu, tên riêng hay sự kiện.</span></div></div>
+              <div class="quality"><span class="quality-check">✓</span><div><strong>Giữ đầy đủ ý chính</strong><span>Không bỏ sót thông tin nổi bật.</span></div></div>
+              <div class="quality"><span class="quality-check">✓</span><div><strong>Rõ ràng, đúng ngữ cảnh</strong><span>Bố cục mạch lạc, không đổi nghĩa.</span></div></div>
+              <div class="quality"><span class="quality-check">✓</span><div><strong>Không suy đoán</strong><span>Đánh dấu phần chưa nghe rõ thay vì tự điền.</span></div></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="workflow" aria-labelledby="workflow-title">
+        <div class="section-head"><div><div class="section-kicker">Quy trình / Workflow</div><h2 id="workflow-title">Tám bước từ nguồn đến bản tin</h2><p class="section-desc">Bản trưng bày gộp đánh giá quy mô và chia đoạn trong cùng một bước.</p></div><span class="small-pill">SOP · 8 bước</span></div>
+        <div class="steps-grid">
+          <article class="step"><span class="step-num">01</span><strong>Xác thực đầu vào</strong><p>Quyền truy cập, định dạng, thời lượng và chất lượng tiếng nói.</p></article>
+          <article class="step"><span class="step-num">02</span><strong>Đánh giá & chia đoạn</strong><p>Xét mật độ/cấu trúc; chia theo chủ đề khi cần.</p></article>
+          <article class="step"><span class="step-num">03</span><strong>Trích xuất & chép lời</strong><p>Tạo transcript, giữ mốc thời gian nếu có.</p></article>
+          <article class="step"><span class="step-num">04</span><strong>Rà soát điểm chưa rõ</strong><p>Đối chiếu tên riêng, số liệu; gắn nhãn bất định.</p></article>
+          <article class="step"><span class="step-num">05</span><strong>Phân loại & lọc nhiễu</strong><p>Nhóm chủ đề, bỏ phần lặp và nội dung thừa.</p></article>
+          <article class="step"><span class="step-num">06</span><strong>Tổng hợp bản tin</strong><p>Giữ ý chính, bám nguồn, không thêm kiến thức ngoài.</p></article>
+          <article class="step"><span class="step-num">07</span><strong>Tự kiểm tra chất lượng</strong><p>Rà tính trung thực, đầy đủ, rõ ràng và định dạng.</p></article>
+          <article class="step"><span class="step-num">08</span><strong>Chuẩn bị đầu ra</strong><p>Trình bày kết quả; chờ duyệt trước khi gửi/xuất bản.</p></article>
+        </div>
+      </section>
+
+      <section class="section" id="boundaries" aria-labelledby="boundaries-title">
+        <div class="section-head"><div><div class="section-kicker">Ranh giới / Boundaries</div><h2 id="boundaries-title">Agent làm gì — và không làm gì</h2><p class="section-desc">Quyền quyết định xuất bản và xử lý ngoại lệ vẫn thuộc về con người.</p></div></div>
+        <div class="boundary-grid">
+          <article class="boundary ok"><span class="boundary-icon">✓</span><div><strong>Có thể hỗ trợ</strong><p>Chép lời, lọc nhiễu, phân loại, chắt lọc ý chính, tóm tắt và chuẩn bị đầu ra theo yêu cầu.</p></div></article>
+          <article class="boundary no"><span class="boundary-icon">×</span><div><strong>Không tự ý thực hiện</strong><p>Không gửi email/xuất bản khi chưa duyệt; không sửa tệp gốc; không thêm dữ kiện ngoài nguồn.</p></div></article>
+          <article class="boundary no"><span class="boundary-icon">×</span><div><strong>Không đưa kết luận chuyên môn rủi ro cao</strong><p>Không tư vấn hoặc kết luận về tài chính, pháp lý hay y tế.</p></div></article>
+          <article class="boundary ok"><span class="boundary-icon">↗</span><div><strong>Chuyển người dùng rà soát</strong><p>Khi âm thanh kém, nội dung cốt lõi chưa rõ, có mâu thuẫn hoặc tự kiểm tra phát hiện rủi ro sai lệch.</p></div></article>
+        </div>
+      </section>
+
+      <footer class="footer"><span><b>newseditor</b> · Biên tập viên tin tức</span><span>Demo mô phỏng · Không nhận tệp · Không gọi API · Không gửi dữ liệu</span></footer>
+    </main>
+  </div>
+  <script>
+    (() => {
+      const button = document.getElementById('run-demo');
+      const status = document.getElementById('demo-status');
+      const percent = document.getElementById('demo-percent');
+      const fill = document.getElementById('progress-fill');
+      const progress = document.querySelector('[role="progressbar"]');
+      const stages = Array.from(document.querySelectorAll('[data-stage]'));
+      const result = document.getElementById('demo-result');
+      const labels = ['Xác thực mẫu dựng sẵn', 'Tạo transcript mô phỏng', 'Lọc và chọn ý mẫu', 'Kiểm tra bố cục đầu ra'];
+      let timer = null;
+      button.addEventListener('click', () => {
+        if (timer) return;
+        button.disabled = true;
+        button.querySelector('span').textContent = 'Đang phát mô phỏng…';
+        result.classList.remove('show');
+        stages.forEach(stage => stage.classList.remove('done', 'current'));
+        let index = 0;
+        const advance = () => {
+          stages.forEach((stage, i) => stage.classList.toggle('current', i === index));
+          if (index > 0) stages[index - 1].classList.add('done');
+          if (index >= stages.length) {
+            stages.forEach(stage => stage.classList.remove('current'));
+            stages[stages.length - 1].classList.add('done');
+            fill.style.width = '100%';
+            percent.textContent = '100%';
+            progress.setAttribute('aria-valuenow', '100');
+            status.textContent = 'Hoàn tất phần trình diễn';
+            result.classList.add('show');
+            button.disabled = false;
+            button.querySelector('span').textContent = 'Phát lại bản demo';
+            timer = null;
+            return;
+          }
+          const value = Math.round((index / stages.length) * 100);
+          fill.style.width = value + '%';
+          percent.textContent = value + '%';
+          progress.setAttribute('aria-valuenow', String(value));
+          status.textContent = labels[index];
+          index += 1;
+          timer = window.setTimeout(advance, 620);
+        };
+        advance();
+      });
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          document.querySelectorAll('.nav-link').forEach(item => item.classList.remove('active'));
+          link.classList.add('active');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
