@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f6f7f1">
-  <title>Newsroom — Agent phiên âm âm thanh & video của Đỗ Quỳnh Như</title>
+  <title>Newsroom — Phiên âm âm thanh & video | 音视频转写 — Đỗ Quỳnh Như</title>
   <style>
     :root {
       --page: #f6f7f1;
@@ -50,7 +50,10 @@
     .topbar { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 28px; }
     .crumb { color: var(--muted); font-size: 12px; }
     .crumb b { color: var(--ink); font-weight: 600; }
-    .top-actions { display: flex; align-items: center; gap: 9px; }
+    .top-actions { display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+    .lang-switch { display: inline-flex; gap: 3px; padding: 3px; border: 1px solid #e5e9e3; border-radius: 999px; background: rgba(255,255,255,.82); }
+    .lang-switch button { border: 0; border-radius: 999px; padding: 6px 9px; background: transparent; color: #66746b; font-size: 10px; font-weight: 650; cursor: pointer; }
+    .lang-switch button[aria-pressed="true"] { background: var(--green); color: white; }
     .small-pill { display: inline-flex; align-items: center; gap: 7px; border: 1px solid #e5e9e3; border-radius: 999px; padding: 7px 11px; background: rgba(255,255,255,.72); font-size: 11px; color: #66746b; }
     .small-pill .dot { background: #d59a2d; }
     .profile-chip { display: inline-flex; align-items: center; gap: 8px; padding: 5px 10px 5px 5px; border: 1px solid var(--line); background: white; border-radius: 999px; font-size: 11px; color: #536158; }
@@ -155,13 +158,13 @@
         <span><span class="brand-name">NEWSROOM</span><span class="brand-sub">Không gian Agent</span></span>
       </a>
       <div>
-        <div class="nav-label">Khám phá Agent</div>
+        <div class="nav-label">KHÁM PHÁ AGENT</div>
         <nav class="nav-list">
-          <a class="nav-link active" href="#home"><span class="nav-icon">⌂</span><span>Tổng quan 总览</span></a>
-          <a class="nav-link" href="#demo"><span class="nav-icon">▷</span><span>Demo mô phỏng 演示</span></a>
-          <a class="nav-link" href="#workflow"><span class="nav-icon">↗</span><span>Quy trình 流程</span></a>
-          <a class="nav-link" href="#standards"><span class="nav-icon">✓</span><span>Quy chuẩn 标准</span></a>
-          <a class="nav-link" href="#boundaries"><span class="nav-icon">◇</span><span>Ranh giới 边界</span></a>
+          <a class="nav-link active" href="#home"><span class="nav-icon">⌂</span><span>Tổng quan</span></a>
+          <a class="nav-link" href="#demo"><span class="nav-icon">▷</span><span>Demo mô phỏng</span></a>
+          <a class="nav-link" href="#workflow"><span class="nav-icon">↗</span><span>Quy trình</span></a>
+          <a class="nav-link" href="#standards"><span class="nav-icon">✓</span><span>Quy chuẩn</span></a>
+          <a class="nav-link" href="#boundaries"><span class="nav-icon">◇</span><span>Ranh giới</span></a>
         </nav>
       </div>
       <div class="side-note">
@@ -173,8 +176,13 @@
 
     <main>
       <div class="topbar">
-        <div class="crumb">Agent / <b>Biên tập viên tin tức</b></div>
+        <div class="crumb">Vai trò: <b>Biên tập viên tin tức</b></div>
         <div class="top-actions">
+          <div class="lang-switch" role="group" aria-label="Chọn ngôn ngữ / 选择语言">
+            <button type="button" data-language="vi" aria-pressed="false">VI</button>
+            <button type="button" data-language="zh" aria-pressed="false">中文</button>
+            <button type="button" data-language="bi" aria-pressed="true">VI + 中文</button>
+          </div>
           <span class="small-pill"><i class="dot"></i> Mô phỏng — không xử lý tệp thật</span>
           <span class="profile-chip"><span class="avatar">N</span> newseditor</span>
         </div>
@@ -182,7 +190,7 @@
 
       <section class="hero" id="home">
         <div>
-          <div class="eyebrow"><span>✳</span> Âm thanh & video · Audio & video</div>
+          <div class="eyebrow"><span>✳</span> Âm thanh & video</div>
           <h1>Từ lời nói đến bản tin có căn cứ.</h1>
           <p>Agent phiên âm, lọc nhiễu và chắt lọc những ý nổi bật từ âm thanh, video hoặc liên kết — rồi trình bày thành bản tóm tắt dễ kiểm tra.</p>
           <small class="hero-credit">Agent của Đỗ Quỳnh Như</small>
@@ -192,7 +200,7 @@
           </div>
         </div>
         <div class="hero-aside">
-          <small>Vai trò / Agent role</small>
+          <small>Vai trò</small>
           <strong>Biên tập viên tin tức</strong>
           <p>Biến nguồn âm thanh/video thành transcript và bản tin gọn, trung thực với nguồn.</p>
         </div>
@@ -205,7 +213,7 @@
 
       <section class="section" aria-labelledby="overview-title">
         <div class="section-head">
-          <div><div class="section-kicker">Tổng quan / Overview</div><h2 id="overview-title">Một luồng làm việc, ba điều cốt lõi</h2><p class="section-desc">Đầu vào rõ ràng, nội dung bám nguồn, người dùng duyệt trước khi gửi.</p></div>
+          <div><div class="section-kicker">Tổng quan</div><h2 id="overview-title">Một luồng làm việc, ba điều cốt lõi</h2><p class="section-desc">Đầu vào rõ ràng, nội dung bám nguồn, người dùng duyệt trước khi gửi.</p></div>
         </div>
         <div class="metric-grid">
           <article class="metric"><div class="metric-top"><span>Nguồn thường dùng</span><span class="metric-icon" aria-hidden="true">♫</span></div><strong>Audio · Video · URL</strong><p>YouTube, Drive hoặc tệp tải lên</p></article>
@@ -216,7 +224,7 @@
 
       <section class="section" id="demo" aria-labelledby="demo-title">
         <div class="section-head">
-          <div><div class="section-kicker">Trải nghiệm / Experience</div><h2 id="demo-title">Xem một lượt xử lý mô phỏng</h2><p class="section-desc">Mẫu dựng sẵn minh họa giao diện và các bước, không đại diện cho kết quả chạy thực tế.</p></div>
+          <div><div class="section-kicker">Trải nghiệm</div><h2 id="demo-title">Xem một lượt xử lý mô phỏng</h2><p class="section-desc">Mẫu dựng sẵn minh họa giao diện và các bước, không đại diện cho kết quả chạy thực tế.</p></div>
         </div>
         <div class="content-grid">
           <article class="surface demo">
@@ -254,7 +262,7 @@
       </section>
 
       <section class="section" id="workflow" aria-labelledby="workflow-title">
-        <div class="section-head"><div><div class="section-kicker">Quy trình / Workflow</div><h2 id="workflow-title">Tám bước từ nguồn đến bản tin</h2><p class="section-desc">Bản trưng bày gộp đánh giá quy mô và chia đoạn trong cùng một bước.</p></div><span class="small-pill">SOP · 8 bước</span></div>
+        <div class="section-head"><div><div class="section-kicker">Quy trình</div><h2 id="workflow-title">Tám bước từ nguồn đến bản tin</h2><p class="section-desc">Bản trưng bày gộp đánh giá quy mô và chia đoạn trong cùng một bước.</p></div><span class="small-pill">SOP · 8 bước</span></div>
         <div class="steps-grid">
           <article class="step"><span class="step-num">01</span><strong>Xác thực đầu vào</strong><p>Quyền truy cập, định dạng, thời lượng và chất lượng tiếng nói.</p></article>
           <article class="step"><span class="step-num">02</span><strong>Đánh giá & chia đoạn</strong><p>Xét mật độ/cấu trúc; chia theo chủ đề khi cần.</p></article>
@@ -268,7 +276,7 @@
       </section>
 
       <section class="section" id="boundaries" aria-labelledby="boundaries-title">
-        <div class="section-head"><div><div class="section-kicker">Ranh giới / Boundaries</div><h2 id="boundaries-title">Agent làm gì — và không làm gì</h2><p class="section-desc">Quyền quyết định xuất bản và xử lý ngoại lệ vẫn thuộc về con người.</p></div></div>
+        <div class="section-head"><div><div class="section-kicker">Ranh giới</div><h2 id="boundaries-title">Agent làm gì — và không làm gì</h2><p class="section-desc">Quyền quyết định xuất bản và xử lý ngoại lệ vẫn thuộc về con người.</p></div></div>
         <div class="boundary-grid">
           <article class="boundary ok"><span class="boundary-icon">✓</span><div><strong>Có thể hỗ trợ</strong><p>Chép lời, lọc nhiễu, phân loại, chắt lọc ý chính, tóm tắt và chuẩn bị đầu ra theo yêu cầu.</p></div></article>
           <article class="boundary no"><span class="boundary-icon">×</span><div><strong>Không tự ý thực hiện</strong><p>Không gửi email/xuất bản khi chưa duyệt; không sửa tệp gốc; không thêm dữ kiện ngoài nguồn.</p></div></article>
@@ -282,6 +290,133 @@
   </div>
   <script>
     (() => {
+      const translations = {
+        'NEWSROOM': '新闻编辑室',
+        'Không gian Agent': 'Agent 工作空间',
+        'KHÁM PHÁ AGENT': '探索 Agent',
+        'Tổng quan': '总览',
+        'Demo mô phỏng': '模拟演示',
+        'Quy trình': '工作流程',
+        'Quy chuẩn': '质量标准',
+        'Ranh giới': '能力边界',
+        'KHÁM PHÁ AGENT': '探索 Agent',
+        'Chỉ là bản trưng bày': '仅供展示',
+        'Trang này không gửi dữ liệu và không gọi Hermes.': '本页面不会发送数据，也不会调用 Hermes。',
+        'MÔ PHỎNG TĨNH': '静态模拟',
+        'Vai trò:': '角色：',
+        'Biên tập viên tin tức': '新闻编辑助手',
+        'Mô phỏng — không xử lý tệp thật': '模拟演示 — 不处理真实文件',
+        'Âm thanh & video': '音频与视频',
+        'Từ lời nói đến bản tin có căn cứ.': '让语音内容成为有据可查的简报。',
+        'Agent phiên âm, lọc nhiễu và chắt lọc những ý nổi bật từ âm thanh, video hoặc liên kết — rồi trình bày thành bản tóm tắt dễ kiểm tra.': 'Agent 将音频、视频或链接转写为文字，过滤噪声并提炼重点，整理成便于核查的摘要。',
+        'Agent của Đỗ Quỳnh Như': 'Đỗ Quỳnh Như 的 Agent',
+        'Xem demo mô phỏng': '查看模拟演示',
+        'Khám phá quy trình': '了解工作流程',
+        'Vai trò': '角色',
+        'Biến nguồn âm thanh/video thành transcript và bản tin gọn, trung thực với nguồn.': '将音视频内容转写并整理成精简简报，忠实于原始来源。',
+        'Nút demo chỉ phát nội dung dựng sẵn trong trình duyệt. Không có tải tệp, backend, API, khóa truy cập hay kết nối đến Profile Hermes.': '演示按钮只会在浏览器中播放预设内容。页面不上传文件、不连接后端或 API，也不包含访问密钥或 Hermes Profile。',
+        'Trải nghiệm': '体验',
+        'Một luồng làm việc, ba điều cốt lõi': '一套流程，三个核心原则',
+        'Đầu vào rõ ràng, nội dung bám nguồn, người dùng duyệt trước khi gửi.': '输入清晰、内容有据，发送前由用户审核。',
+        'Nguồn thường dùng': '常用来源',
+        'Audio · Video · URL': '音频 · 视频 · 链接',
+        'YouTube, Drive hoặc tệp tải lên': 'YouTube、Drive 或上传的文件',
+        'Phiên tiêu chuẩn': '标准处理批次',
+        '1–3 nguồn': '1–3 个来源',
+        'Thường 15–45 phút mỗi nguồn': '每个来源通常为 15–45 分钟',
+        'Nguyên tắc đầu ra': '输出原则',
+        '4 tiêu chí': '四项标准',
+        'Trung thực · Đủ ý · Rõ · Không đoán': '忠实 · 完整 · 清晰 · 不臆测',
+        'Xem một lượt xử lý mô phỏng': '查看一次模拟处理流程',
+        'Mẫu dựng sẵn minh họa giao diện và các bước, không đại diện cho kết quả chạy thực tế.': '预设样例仅用于展示界面和流程，不代表真实运行结果。',
+        'Phiên demo · Tư liệu dựng sẵn': '演示环节 · 预设素材',
+        'Không chọn hoặc tải tệp từ thiết bị.': '不会选择或上传设备中的文件。',
+        'Mẫu hội thoại về phương pháp học tập': '关于学习方法的对话样例',
+        'Nội dung hư cấu · 18 phút mô phỏng · Không có nguồn thật': '虚构内容 · 模拟时长 18 分钟 · 无真实来源',
+        'Ví dụ dựng sẵn': '预设示例',
+        'Bấm nút để xem tiến trình giả lập.': '点击按钮查看模拟流程。',
+        'Phát bản demo': '播放演示',
+        'Sẵn sàng trình diễn': '演示已就绪',
+        'Xác thực nguồn': '验证来源',
+        'Tạo transcript': '生成转写文本',
+        'Lọc & chọn ý': '筛选并提炼重点',
+        'Kiểm tra đầu ra': '检查输出',
+        'Kết quả mẫu · Không phải kết quả chạy thật': '示例结果 · 并非真实运行结果',
+        'Tóm tắt mô phỏng: học tập theo phiên ngắn': '模拟摘要：采用短时段学习',
+        'Đoạn hội thoại dựng sẵn đề xuất chia thời gian học thành phiên tập trung ngắn, xen kẽ nghỉ và ôn lại nội dung vừa học.': '预设对话建议将学习时间分成较短的专注时段，中间穿插休息，并复习刚学过的内容。',
+        'Ý chính: lập mục tiêu nhỏ trước mỗi phiên học.': '重点：每个学习时段开始前设定一个小目标。',
+        'Điểm cần kiểm tra ở nguồn thật: số liệu/thời lượng cụ thể nếu có.': '真实来源中需核实的内容：如有，检查具体数据和时长。',
+        'Đoạn không rõ: không có trong mẫu dựng sẵn.': '无法辨认的片段：预设样例中没有。',
+        'Tiêu chuẩn bản tin': '简报质量标准',
+        'Mỗi kết quả cần đáp ứng đủ các tiêu chí này.': '每份结果都应符合以下标准。',
+        'Trung thực với nguồn': '忠实于来源',
+        'Không bịa số liệu, tên riêng hay sự kiện.': '不编造数据、专有名称或事件。',
+        'Giữ đầy đủ ý chính': '保留全部要点',
+        'Không bỏ sót thông tin nổi bật.': '不遗漏重要信息。',
+        'Rõ ràng, đúng ngữ cảnh': '表达清晰、符合语境',
+        'Bố cục mạch lạc, không đổi nghĩa.': '结构清楚，不改变原意。',
+        'Không suy đoán': '不作推测',
+        'Đánh dấu phần chưa nghe rõ thay vì tự điền.': '听不清的部分应标注出来，不自行补全。',
+        'SOP · 8 bước': 'SOP · 8 个步骤',
+        'Tám bước từ nguồn đến bản tin': '从来源到简报的八个步骤',
+        'Bản trưng bày gộp đánh giá quy mô và chia đoạn trong cùng một bước.': '展示流程将规模评估与分段处理合并为一步。',
+        'Quyền truy cập, định dạng, thời lượng và chất lượng tiếng nói.': '检查访问权限、文件格式、时长和语音质量。',
+        'Xét mật độ/cấu trúc; chia theo chủ đề khi cần.': '评估信息密度和结构；必要时按主题分段。',
+        'Tạo transcript, giữ mốc thời gian nếu có.': '生成转写文本，并在可用时保留时间戳。',
+        'Đối chiếu tên riêng, số liệu; gắn nhãn bất định.': '核对专有名称和数据；标记不确定内容。',
+        'Nhóm chủ đề, bỏ phần lặp và nội dung thừa.': '按主题分类，删除重复和无关内容。',
+        'Giữ ý chính, bám nguồn, không thêm kiến thức ngoài.': '保留要点、忠于来源，不添加外部信息。',
+        'Rà tính trung thực, đầy đủ, rõ ràng và định dạng.': '检查真实性、完整性、清晰度和格式。',
+        'Trình bày kết quả; chờ duyệt trước khi gửi/xuất bản.': '整理结果；发送或发布前等待用户审核。',
+        'Agent làm gì — và không làm gì': 'Agent 可以做什么 — 不能做什么',
+        'Quyền quyết định xuất bản và xử lý ngoại lệ vẫn thuộc về con người.': '发布决定和异常情况的处理权仍由人工掌握。',
+        'Có thể hỗ trợ': '可以协助',
+        'Chép lời, lọc nhiễu, phân loại, chắt lọc ý chính, tóm tắt và chuẩn bị đầu ra theo yêu cầu.': '转写、过滤噪声、分类、提炼要点、撰写摘要，并按要求准备输出。',
+        'Không tự ý thực hiện': '未经确认不得执行',
+        'Không gửi email/xuất bản khi chưa duyệt; không sửa tệp gốc; không thêm dữ kiện ngoài nguồn.': '未经审核不得发送邮件或发布；不得修改原始文件；不得加入来源之外的信息。',
+        'Không đưa kết luận chuyên môn rủi ro cao': '不提供高风险专业结论',
+        'Không tư vấn hoặc kết luận về tài chính, pháp lý hay y tế.': '不提供财务、法律或医疗建议或结论。',
+        'Chuyển người dùng rà soát': '转交用户复核',
+        'Khi âm thanh kém, nội dung cốt lõi chưa rõ, có mâu thuẫn hoặc tự kiểm tra phát hiện rủi ro sai lệch.': '当音质较差、核心内容不清、有矛盾，或自检发现失真风险时。',
+        'MÔ PHỎNG TĨNH': '静态模拟',
+        'SIMULATION': '模拟演示',
+        'TXT': '文本',
+        'Không gian Agent': 'Agent 工作空间',
+        'Demo mô phỏng · Không nhận tệp · Không gọi API · Không gửi dữ liệu': '模拟演示 · 不接收文件 · 不调用 API · 不发送数据',
+        'Xác thực mẫu dựng sẵn': '验证预设样例',
+        'Tạo transcript mô phỏng': '生成模拟转写文本',
+        'Lọc và chọn ý mẫu': '筛选并提炼样例重点',
+        'Kiểm tra bố cục đầu ra': '检查输出结构',
+        'Hoàn tất phần trình diễn': '演示完成',
+        'Đang phát mô phỏng…': '正在播放模拟演示…',
+        'Phát lại bản demo': '重新播放演示'
+      };
+
+      const languageButtons = Array.from(document.querySelectorAll('[data-language]'));
+      const textNodes = [];
+      const walker = document.createTreeWalker(document.body, 4);
+      while (walker.nextNode()) {
+        const node = walker.currentNode;
+        const key = node.nodeValue.trim();
+        if (translations[key]) textNodes.push({ node, original: node.nodeValue, key });
+      }
+      let currentLanguage = 'bi';
+      const formatBilingual = (vi, zh) => currentLanguage === 'vi' ? vi : currentLanguage === 'zh' ? zh : `${vi} / ${zh}`;
+      const applyLanguage = mode => {
+        currentLanguage = mode;
+        textNodes.forEach(({ node, original, key }) => {
+          const leading = original.match(/^\s*/)[0];
+          const trailing = original.match(/\s*$/)[0];
+          const value = mode === 'vi' ? key : mode === 'zh' ? translations[key] : `${key} / ${translations[key]}`;
+          node.nodeValue = `${leading}${value}${trailing}`;
+        });
+        languageButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.language === mode)));
+        document.documentElement.lang = mode === 'zh' ? 'zh-CN' : mode === 'vi' ? 'vi' : 'vi';
+        localStorage.setItem('newseditor-language', mode);
+      };
+      languageButtons.forEach(button => button.addEventListener('click', () => applyLanguage(button.dataset.language)));
+      applyLanguage(localStorage.getItem('newseditor-language') || 'bi');
+
       const button = document.getElementById('run-demo');
       const status = document.getElementById('demo-status');
       const percent = document.getElementById('demo-percent');
@@ -294,7 +429,7 @@
       button.addEventListener('click', () => {
         if (timer) return;
         button.disabled = true;
-        button.querySelector('span').textContent = 'Đang phát mô phỏng…';
+        button.querySelector('span').textContent = formatBilingual('Đang phát mô phỏng…', '正在播放模拟演示…');
         result.classList.remove('show');
         stages.forEach(stage => stage.classList.remove('done', 'current'));
         let index = 0;
@@ -307,10 +442,10 @@
             fill.style.width = '100%';
             percent.textContent = '100%';
             progress.setAttribute('aria-valuenow', '100');
-            status.textContent = 'Hoàn tất phần trình diễn';
+            status.textContent = formatBilingual('Hoàn tất phần trình diễn', '演示完成');
             result.classList.add('show');
             button.disabled = false;
-            button.querySelector('span').textContent = 'Phát lại bản demo';
+            button.querySelector('span').textContent = formatBilingual('Phát lại bản demo', '重新播放演示');
             timer = null;
             return;
           }
@@ -318,7 +453,8 @@
           fill.style.width = value + '%';
           percent.textContent = value + '%';
           progress.setAttribute('aria-valuenow', String(value));
-          status.textContent = labels[index];
+          const liveLabels = [['Xác thực mẫu dựng sẵn', '验证预设样例'], ['Tạo transcript mô phỏng', '生成模拟转写文本'], ['Lọc và chọn ý mẫu', '筛选并提炼样例重点'], ['Kiểm tra bố cục đầu ra', '检查输出结构']];
+          status.textContent = formatBilingual(...liveLabels[index]);
           index += 1;
           timer = window.setTimeout(advance, 620);
         };
